@@ -26,7 +26,7 @@ AMP valid, search indexed &amp; auto content re-size with **amp-iframe** fallbac
 <ul>
 <li>https://blogr-amp.blogspot.com<br>
 AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No post edits required!).</li>
-<li>Demo page - Coming Soon!</li>
+<li>https://blogr-amp.github.io/</li>
 </ul>
 <br>
 ## How to Use?

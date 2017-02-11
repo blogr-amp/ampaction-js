@@ -111,6 +111,16 @@ a {
 		display : none;
 	}
 }
+img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+.separator > a {
+	margin-left:auto!important;
+	margin-right:auto!important;
+}
 </style>    
 
 </head>
@@ -295,7 +305,7 @@ function loadFeed(){
 	// callback to assign amp-iframe height
 	$('#feeder').YqlRSS( FEED , settings , function () {
 		var div_height = doc.body.scrollHeight;
-		if ( $('.feeds').length ){
+		if ( $('.feeds').length || $('.post-body-frame').length ){
 			var divs = setInterval(function() {
 				if ( $('#feeder').height() !== div_height ){
 					var height = $('#feeder').height();

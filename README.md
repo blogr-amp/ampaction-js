@@ -1,7 +1,7 @@
 # :zap: ampaction(js)
 All-in-one amp-iframe helper widget for Blogger themes with Accelerted Mobile Pages (AMP HTML) integrations. Displays a collection of Blogger posts chronoligically, in random, by featured label, by related label &amp; DISQUS comments for HTTP &amp; HTTPS Blogger blog or custom domain blogs.<br>
 <br>
-Copyright (c) 2012 irsah 
+Copyright (c) 2016 irsah 
 <br>
 <br>
 No Feed proxy required.<br>
@@ -88,7 +88,8 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   &amp;fontsize=16
   &amp;fontlineheight=1.428
   &amp;fontfamily=Helvetica,Arial,sans-serif
-  &amp;canonicalurl=" + data:blog.canonicalUrl +"
+  &amp;canonicalurl=" + data:blog.canonicalUrl +" 
+  &amp;canonicalhomepageurl=" + data:blog.canonicalhomepageUrl + " 
   frameborder='0'
   height='450'
   layout='responsive' 
@@ -116,7 +117,8 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   &amp;fontsize=16
   &amp;fontlineheight=1.428
   &amp;fontfamily=Helvetica,Arial,sans-serif
-  &amp;canonicalurl=" + data:blog.canonicalUrl + "
+  &amp;canonicalurl=" + data:blog.canonicalUrl + " 
+  &amp;canonicalhomepageurl=" + data:blog.canonicalhomepageUrl + " 
   frameborder='0' 
   height='450'
   layout='responsive' 
@@ -139,7 +141,8 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   &amp;fontsize=16
   &amp;fontlineheight=1.428
   &amp;fontfamily=Helvetica,Arial,sans-serif
-  &amp;canonicalurl=" + data:blog.canonicalUrl + "
+  &amp;canonicalurl=" + data:blog.canonicalUrl + " 
+  &amp;canonicalhomepageurl=" + data:blog.canonicalhomepageUrl + " 
   frameborder='0'
   height='450' 
   layout='responsive'

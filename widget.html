@@ -269,7 +269,7 @@ function loadFeed(){
 	if ( $_GET('feeddefaultimage') !== false ) settings.default_image = $_GET('feeddefaultimage');				
 	if ( $_GET('feedlabels') !== false ) settings.labels = false;	
 	if ( $_GET('feeddate') !== false ) {
-		settings.date = true;
+		settings.date = $_GET('feeddate');
 		// setup months array
 		var date_months = $_GET('feedmonths');
 		if( date_months !== false && date_months.indexOf('[]') !== -1){

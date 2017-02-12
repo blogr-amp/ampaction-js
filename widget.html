@@ -306,6 +306,7 @@ function loadFeed(){
 	$('#feeder').YqlRSS( FEED , settings , function () {
 		var div_height = doc.body.scrollHeight;
 		if ( $('.feeds').length || $('.post-body-frame').length ){
+			$('.post-body-frame a').attr( 'target' , '_blank' );
 			var divs = setInterval(function() {
 				if ( $('#feeder').height() !== div_height ){
 					var height = $('#feeder').height();

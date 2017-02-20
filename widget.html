@@ -334,10 +334,6 @@ function loadGooglePlus(){
 	// create googleplus div
 	var gPlus = doc.getElementById('comments')
 	gPlus.className = 'g-comments';
-	gPlus.setAttribute('data-first_party_property','BLOGGER');
-	gPlus.setAttribute('data-view_type','FILTERED_POSTMOD');
-	gPlus.setAttribute('data-width', 600 );
-	gPlus.setAttribute('data-href', $_GET('canonicalurl') );
 	
 	// append gplus div
 	doc.getElementsByTagName('body')[0].appendChild( gPlus );
@@ -349,8 +345,17 @@ function loadGooglePlus(){
 	js.src = 'https://apis.google.com/js/plusone.js';
 	doc.getElementsByTagName('head')[0].appendChild( js );
 	
+	window.setTimeout(function() {
+		gapi.comments.render( 'comments',{
+			'href': $_GET('canonicalurl'),
+			'first_party_property' : 'BLOGGER',
+			'view_type' : 'FILTERED_POSTMOD',
+			'width': gPlus.offsetWidth
+		});
+	}, 10);
+	
 	var body_height = doc.body.scrollHeight;
-	var gPlus_height = doc.getElementById('comments').offsetHeight;
+	var gPlus_height = gPlus.offsetHeight;
 	var divs = setInterval(function() {
 		if ( gPlus_height > body_height ){			
 			body_height = gPlus_height;

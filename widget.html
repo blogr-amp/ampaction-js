@@ -350,7 +350,7 @@ function loadGooglePlus(){
 	doc.getElementsByTagName('head')[0].appendChild( js );
 	
 	var body_height = doc.body.scrollHeight;
-	var gPlus_height = doc.getElementById('g-comments').offsetHeight;
+	var gPlus_height = doc.getElementById('comments').offsetHeight;
 	var divs = setInterval(function() {
 		if ( gPlus_height > body_height ){			
 			body_height = gPlus_height;

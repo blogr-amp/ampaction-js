@@ -324,12 +324,12 @@ function loadFeed(){
 
 function loadGooglePlus(){
 	
-	// check canonical url
+	// check url
+	// required for G+ comments unique identifier
 	if( $_GET('url') === false ) return (false);
 	
 	// remove divs and load styles
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
-	loadStyles();
 	
 	// create googleplus div
 	var gPlus = doc.getElementById('comments');

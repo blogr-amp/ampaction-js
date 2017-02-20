@@ -334,9 +334,9 @@ function loadGooglePlus(){
 	
 	// create googleplus div
 	var gPlus = doc.getElementById('comments');
-	window.location.hash = $_GET('url');
+	window.location.hash = $_GET('canonicalurl');
 	gapi.comments.render( 'comments',{
-		'href': $_GET('url'),
+		'href': window.location,
 		'first_party_property' : 'BLOGGER',
 		'view_type' : 'FILTERED_POSTMOD',
 		'width': gPlus.offsetWidth

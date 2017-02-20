@@ -326,7 +326,7 @@ function loadFeed(){
 function loadGooglePlus(){
 	
 	// check canonical url
-	if( $_GET('canonicalurl') === false ) return (false);
+	if( $_GET('url') === false ) return (false);
 	
 	// remove divs and load styles
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
@@ -337,7 +337,7 @@ function loadGooglePlus(){
 	
 	window.setTimeout(function() {
 		gapi.comments.render( 'comments',{
-			'href': $_GET('canonicalurl'),
+			'href': $_GET('url'),
 			'first_party_property' : 'BLOGGER',
 			'view_type' : 'FILTERED_POSTMOD',
 			'width': gPlus.offsetWidth

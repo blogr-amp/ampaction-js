@@ -45,13 +45,14 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
 <li>amp-iframe URL search quiries pass data to enable/setup widget settings.</li>
 <li>IF ?ampaction=disqus - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.</li>
 <li>IF ?ampaction=feed - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.</li>
+<li>[NEW] IF ?ampaction=googleplus - Displays Google+ comments with unique identifier.</li>
 </ul>
 <br>
 ## Examples
 #### amp-iframe: Blogger DISQUS Comments
 ```
 <amp-iframe
-  expr:src='"https://path-to-file.html
+  expr:src='https://path-to-file.html
   ?ampactions=disqus
   &amp;shortname={{DISQUS_SHORTNAME}}
   &amp;fontstyle=normal
@@ -72,11 +73,30 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
 <div aria-label='Disqus' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'/>
 </amp-iframe>
 ```
+<br>
+#### [NEW] amp-iframe: Blogger Google+ Comments
+```
+<amp-iframe
+  expr:src='https://path-to-file.html
+  ?ampactions=googleplus
+  &amp;canonicalurl=" + data:blog.canonicalUrl + "
+  &amp;url=" + data:blog.url + "
+  &amp;homepageurl=" + data:blog.homepageUrl + "
+  &amp;canonicalhomepageurl=" + data:blog.canonicalHomepageUrl'
+  frameborder='0'
+  height='450'
+  layout='responsive'
+  resizable='resizable'
+  sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'
+  width='600'>
+<div aria-label='Goole+' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'/>
+</amp-iframe>
+```
 <br/>
 #### amp-iframe: Blogger Posts Collection
 ```
 <amp-iframe
-  expr:src='"https://path-to-file.html
+  expr:src='https://path-to-file.html
   ?ampactions=feed
   &amp;feedsummary=160
   &amp;feedlimit=100
@@ -103,7 +123,7 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
 #### amp-iframe: Blogger Related Posts Collection
 ```
 <amp-iframe
-  expr:src='"https://path-to-file.html
+  expr:src='https://path-to-file.html
   ?ampactions=feed
   &amp;feedrelated=true
   &amp;feedrelatedlabel={{A BLOG POST LABEL}}
@@ -132,7 +152,7 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
 #### amp-iframe: Blogger Display Post Contents
 ```
 <amp-iframe 
-  expr:src='"https://path-to-file.html
+  expr:src='https://path-to-file.html
   ?ampactions=feed
   &amp;feedcontenttype=text
   &amp;feedsummary=160

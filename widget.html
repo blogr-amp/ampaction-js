@@ -328,13 +328,11 @@ function loadGooglePlus(){
 	if( $_GET('canonicalurl') === false ) return (false);
 	
 	// remove divs and load styles
-	doc.getElementById('comments').parentNode.removeChild( doc.getElementById('comments') );
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
 	loadStyles();
 	
 	// create googleplus div
-	var gPlus = doc.createElement('div');
-	gPlus.id = 'g-comments';
+	var gPlus = doc.getElementById('comments')
 	gPlus.className = 'g-comments';
 	gPlus.setAttribute('data-first_party_property','BLOGGER');
 	gPlus.setAttribute('data-view_type','FILTERED_POSTMOD');

@@ -125,6 +125,9 @@ img {
 }
 
 /* Instafeed */
+#instafeed {
+	text-align:center;
+}
 #instafeed, 
 #instafeed a { 
 	color: #fff;
@@ -156,7 +159,7 @@ img {
 	z-index: 3; 
 	position: absolute; 
 	top: 0; 
-  left: 0; 
+	left: 0; 
 	width: 100%; 
 	height: 100%;
 	text-align: center; 
@@ -189,9 +192,9 @@ img {
 /*
 @title:		ampaction(js) Blogger amp-iframe helper widget
 @author: 	(c) 2016 irsah indesigns
-@created: Feb 2016
+@created: 	Feb 2016
 @demo:		https://blogr-amp.blogspot.com
-@url:			https://www.irsah.com
+@url:		https://www.irsah.com
 @blog:		https://blog.irsah.com
 */
 	
@@ -273,7 +276,7 @@ function loadDisqus(){
 	
 	// remove unused div and load styles...
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
-  doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
+	doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
 	loadStyles();
 	
 	// prep disqus script and load...
@@ -301,7 +304,7 @@ function loadFeed(){
 	
 	// remove unused div and load styles
 	doc.getElementById('comments').parentNode.removeChild( doc.getElementById('comments') );
-  doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
+  	doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
 	loadStyles();
 	
 	// prep fedd urls
@@ -323,8 +326,8 @@ function loadFeed(){
 		content_type: null,
 		content_url: null,
 		related: false,
-    related_label: null,
-    status: false
+    		related_label: null,
+    		status: false
 	};
 	
 	// check if custom settings available
@@ -354,7 +357,7 @@ function loadFeed(){
 	};
 	
 	if ( $_GET('feedrelated') !== false ){
-	  settings.related = true;
+	  	settings.related = true;
 		settings.related_label = $_GET('feedrelatedlabel');	
 	};
 	
@@ -387,7 +390,7 @@ function loadGooglePlus(){
 	
 	// remove unused divs
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
-  doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
+  	doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
 	
 	// create googleplus div
 	var gPlus = doc.getElementById('comments');
@@ -411,12 +414,15 @@ function loadGooglePlus(){
 	}, 1000 );
 };
 
-function loadInstagram(){
-  // remove unused divs
-  doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
-  doc.getElementById('comments').parentNode.removeChild( doc.getElementById('comments') );
-// instagram settings
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('E d=["\\v\\a\\e","\\G\\b\\a\\q","\\G\\b\\a\\q\\g\\p","\\i\\h\\g\\a\\f\\e\\g\\p","\\c\\i\\i\\a\\b\\b\\e\\l\\B\\a\\f","\\b\\l\\q\\e\\C\\A","\\q\\c\\f\\p\\l\\n","\\h\\g\\n\\g\\e","\\q\\a\\b\\l\\h\\G\\e\\g\\l\\f","\\h\\l\\1l\\1p\\q\\a\\b\\l\\h\\G\\e\\g\\l\\f","\\b\\i\\q\\l\\h\\h\\P\\a\\g\\v\\H\\e","\\C\\l\\p\\A","\\l\\t\\t\\b\\a\\e\\P\\a\\g\\v\\H\\e","\\g\\f\\b\\e\\c\\t\\a\\a\\p","\\v\\a\\e\\R\\h\\a\\n\\a\\f\\e\\1g\\A\\O\\p","\\m\\c\\j\\H\\q\\a\\t\\x\\k\\u\\u\\h\\g\\f\\B\\w\\w\\k\\o\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\C\\v\\k\\o\\m\\y\\b\\s\\c\\f\\o\\m\\g\\n\\v\\j\\b\\q\\i\\x\\k\\u\\u\\g\\n\\c\\v\\a\\w\\w\\k\\j\\c\\h\\e\\x\\k\\k\\j\\y\\o\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\n\\a\\e\\c\\k\\o\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\h\\g\\B\\a\\b\\k\\o\\u\\u\\h\\g\\B\\a\\b\\w\\w\\m\\y\\b\\s\\c\\f\\o\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\i\\l\\n\\n\\a\\f\\e\\b\\k\\o\\u\\u\\i\\l\\n\\n\\a\\f\\e\\b\\w\\w\\m\\y\\b\\s\\c\\f\\o\\m\\y\\b\\s\\c\\f\\o\\m\\y\\c\\o","\\m\\c\\j\\H\\q\\a\\t\\x\\k\\u\\u\\h\\g\\f\\B\\w\\w\\k\\o","\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\C\\v\\k\\o\\m\\y\\b\\s\\c\\f\\o","\\m\\g\\n\\v\\j\\b\\q\\i\\x\\k\\u\\u\\g\\n\\c\\v\\a\\w\\w\\k\\j\\c\\h\\e\\x\\k\\k\\j\\y\\o","\\h\\g\\B\\a\\b","\\i\\l\\n\\n\\a\\f\\e\\b","\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\n\\a\\e\\c\\k\\o","\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\h\\g\\B\\a\\b\\k\\o\\m\\g\\j\\i\\h\\c\\b\\b\\x\\k\\t\\c\\j\\t\\c\\z\\H\\a\\c\\q\\e\\k\\o\\m\\y\\g\\o\\j\\u\\u\\h\\g\\B\\a\\b\\w\\w\\m\\y\\b\\s\\c\\f\\o","\\m\\b\\s\\c\\f\\j\\i\\h\\c\\b\\b\\x\\k\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\i\\l\\n\\n\\a\\f\\e\\b\\k\\o\\m\\g\\j\\i\\h\\c\\b\\b\\x\\k\\t\\c\\j\\t\\c\\z\\i\\l\\n\\n\\a\\f\\e\\k\\o\\m\\y\\g\\o\\j\\u\\u\\i\\l\\n\\n\\a\\f\\e\\b\\w\\w\\m\\y\\b\\s\\c\\f\\o","\\m\\y\\b\\s\\c\\f\\o","\\m\\y\\c\\o","\\e\\a\\n\\s\\h\\c\\e\\a","\\G\\b\\a\\q\\O\\p","\\i\\h\\g\\a\\f\\e\\O\\p","\\c\\i\\i\\a\\b\\b\\N\\l\\B\\a\\f","\\g\\f\\f\\a\\q\\P\\N\\1s\\1m","\\O\\f\\b\\e\\c\\v\\q\\c\\n\\j\\i\\G\\q\\q\\a\\f\\e\\h\\A\\j\\G\\f\\c\\1r\\c\\g\\h\\c\\C\\h\\a\\1w","","\\i\\l\\h\\l\\q","\\1c\\g\\f\\b\\e\\c\\t\\a\\a\\p\\1t\\j\\1c\\g\\f\\b\\e\\c\\t\\a\\a\\p\\j\\c\\j\\u\\j\\i\\l\\h\\l\\q\\V\\j","\\1q\\j\\w","\\C\\v\\l\\s\\c\\i\\g\\e\\A","\\Z\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\C\\v\\j\\u\\j\\l\\s\\c\\i\\g\\e\\A\\V","\\C\\v\\i\\l\\h\\l\\q","\\Z\\g\\f\\b\\e\\c\\t\\a\\a\\p\\z\\C\\v\\j\\u\\j\\C\\c\\i\\B\\v\\q\\l\\G\\f\\p\\z\\i\\l\\h\\l\\q\\V\\j","\\H\\a\\c\\p","\\v\\a\\e\\R\\h\\a\\n\\a\\f\\e\\b\\1g\\A\\N\\c\\v\\1j\\c\\n\\a","\\b\\e\\A\\h\\a","\\i\\q\\a\\c\\e\\a\\R\\h\\a\\n\\a\\f\\e","\\e\\A\\s\\a","\\e\\a\\S\\e\\y\\i\\b\\b","\\b\\e\\A\\h\\a\\1k\\H\\a\\a\\e","\\i\\b\\b\\N\\a\\S\\e","\\i\\q\\a\\c\\e\\a\\N\\a\\S\\e\\1j\\l\\p\\a","\\c\\s\\s\\a\\f\\p\\1u\\H\\g\\h\\p","\\q\\G\\f"];E K={1o:$r(d[0])?$r(d[0]):d[1],1n:$r(d[2]),1v:$r(d[3]),1R:$r(d[4]),1N:$r(d[5])?$r(d[5]):d[6],1T:$r(d[7])?$r(d[7]):10,1X:$r(d[8])?$r(d[8]):d[9],1x:1f(){E M=I[d[11]][d[10]];E Q=I[d[14]](d[13])[d[12]];E 1h=1C(1f(){D(Q>M){M=Q;1e(M)}T{1e(M);1D(1h)}},1B)},1A:d[15]};E F=d[16];F+=d[17];F+=d[18];D($r(d[19])||$r(d[20])){F+=d[21]};D($r(d[19])){F+=d[22]};D($r(d[20])){F+=d[23]};D($r(d[19])||$r(d[20])){F+=d[24]};F+=d[25];K[d[26]]=F;D(!K[d[1H]]||!K[d[1G]]||!K[d[1I]]){I[d[14]](d[13])[d[1J]]=d[1K]}T{E J=d[1F];D($r(d[1b])){J+=d[1E]+$r(d[1b])+d[U]};D($r(d[1d])){J+=d[1z]+$r(d[1d])+d[U]};D($r(d[Y])){J+=d[1y]+$r(d[Y])+d[U]};E X=I[d[1L]](d[1M])[0];E L=I[d[1Y]](d[1W]);L[d[1Z]]=d[1U];D(L[d[1i]]){L[d[1i]][d[1O]]=J}T{L[d[W]](I[d[1P]](J))};X[d[W]](L);E 1a=1Q 1S(K);1a[d[1V]]()}',62,131,'||||||||||x65|x73|x61|_0xfef7|x74|x6E|x69|x6C|x63|x20|x22|x6F|x3C|x6D|x3E|x64|x72|_GET|x70|x66|x7B|x67|x7D|x3D|x2F|x2D|x79|x6B|x62|if|var|temp|x75|x68|doc|CSS|settings|TAG|_0x29aex2|x54|x49|x48|_0x29aex3|x45|x78|else|35|x3A|49|HEAD|38|x2E|||||||||||InstaFeed|33|x23|36|updateHeight|function|x42|_0x29aex4|46|x4E|x53|x77|x4C|userId|get|x5F|x3B|x76|x4D|x2C|x43|clientId|x21|after|39|37|template|1000|setInterval|clearInterval|34|32|28|27|29|30|31|41|40|sortBy|47|48|new|accessToken|Instafeed|limit|45|50|42|resolution|43|44|||||||'.split('|'),0,{}));
+function getInstagramSettings(){
+	eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('F e=["\\y\\c\\f","\\C\\a\\c\\o","\\C\\a\\c\\o\\g\\u","\\k\\i\\g\\c\\d\\f\\g\\u","\\b\\k\\k\\c\\a\\a\\f\\p\\z\\c\\d","\\a\\p\\o\\f\\E\\J","\\o\\b\\d\\u\\p\\n","\\i\\g\\n\\g\\f","\\o\\c\\a\\p\\i\\C\\f\\g\\p\\d","\\i\\p\\Y\\R\\o\\c\\a\\p\\i\\C\\f\\g\\p\\d","\\a\\k\\o\\p\\i\\i\\P\\c\\g\\y\\I\\f","\\E\\p\\u\\J","\\p\\q\\q\\a\\c\\f\\P\\c\\g\\y\\I\\f","\\g\\d\\a\\f\\b\\q\\c\\c\\u","\\y\\c\\f\\V\\i\\c\\n\\c\\d\\f\\X\\J\\K\\u","\\j\\b\\m\\I\\o\\c\\q\\r\\h\\w\\w\\i\\g\\d\\z\\v\\v\\h\\m\\f\\b\\o\\y\\c\\f\\r\\h\\R\\E\\i\\b\\d\\z\\h\\l\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\E\\y\\h\\l\\j\\x\\a\\s\\b\\d\\l\\j\\g\\n\\y\\m\\a\\o\\k\\r\\h\\w\\w\\g\\n\\b\\y\\c\\v\\v\\h\\m\\b\\i\\f\\r\\h\\h\\m\\x\\l\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\n\\c\\f\\b\\h\\l\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\i\\g\\z\\c\\a\\h\\l\\w\\w\\i\\g\\z\\c\\a\\v\\v\\j\\x\\a\\s\\b\\d\\l\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\k\\p\\n\\n\\c\\d\\f\\a\\h\\l\\w\\w\\k\\p\\n\\n\\c\\d\\f\\a\\v\\v\\j\\x\\a\\s\\b\\d\\l\\j\\x\\a\\s\\b\\d\\l\\j\\x\\b\\l","\\j\\b\\m\\I\\o\\c\\q\\r\\h\\w\\w\\i\\g\\d\\z\\v\\v\\h\\l","\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\E\\y\\h\\l\\j\\x\\a\\s\\b\\d\\l","\\j\\g\\n\\y\\m\\a\\o\\k\\r\\h\\w\\w\\g\\n\\b\\y\\c\\v\\v\\h\\m\\b\\i\\f\\r\\h\\h\\m\\x\\l","\\i\\g\\z\\c\\a","\\k\\p\\n\\n\\c\\d\\f\\a","\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\n\\c\\f\\b\\h\\l","\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\i\\g\\z\\c\\a\\h\\l\\j\\g\\m\\k\\i\\b\\a\\a\\r\\h\\q\\b\\m\\q\\b\\A\\I\\c\\b\\o\\f\\h\\l\\j\\x\\g\\l\\m\\w\\w\\i\\g\\z\\c\\a\\v\\v\\j\\x\\a\\s\\b\\d\\l","\\j\\a\\s\\b\\d\\m\\k\\i\\b\\a\\a\\r\\h\\g\\d\\a\\f\\b\\q\\c\\c\\u\\A\\k\\p\\n\\n\\c\\d\\f\\a\\h\\l\\j\\g\\m\\k\\i\\b\\a\\a\\r\\h\\q\\b\\m\\q\\b\\A\\k\\p\\n\\n\\c\\d\\f\\h\\l\\j\\x\\g\\l\\m\\w\\w\\k\\p\\n\\n\\c\\d\\f\\a\\v\\v\\j\\x\\a\\s\\b\\d\\l","\\j\\x\\a\\s\\b\\d\\l","\\j\\x\\b\\l","\\f\\c\\n\\s\\i\\b\\f\\c","\\C\\a\\c\\o\\K\\u","\\k\\i\\g\\c\\d\\f\\K\\u","\\b\\k\\k\\c\\a\\a\\Q\\p\\z\\c\\d","\\g\\d\\d\\c\\o\\P\\Q\\Z\\1b","\\K\\d\\a\\f\\b\\y\\o\\b\\n\\m\\k\\C\\o\\o\\c\\d\\f\\i\\J\\m\\C\\d\\b\\1a\\b\\g\\i\\b\\E\\i\\c\\M\\M\\M"];F D={W:$t(e[0])?$t(e[0]):e[1],1c:$t(e[2]),1z:$t(e[3]),1y:$t(e[4]),1d:$t(e[5])?$t(e[5]):e[6],1x:$t(e[7])?$t(e[7]):10,1A:$t(e[8])?$t(e[8]):e[9],1w:S(){F H=N[e[11]][e[10]];F O=N[e[14]](e[13])[e[12]];F T=1u(S(){G(O>H){H=O;U(H)}1j{U(H);1k(T)}},1v)},1i:e[15]};F B=e[16];B+=e[17];B+=e[18];G($t(e[19])||$t(e[L])){B+=e[1h]};G($t(e[19])){B+=e[1e]};G($t(e[L])){B+=e[1f]};G($t(e[19])||$t(e[L])){B+=e[1g]};B+=e[1l];D[e[1m]]=B;G(!D[e[1s]]||!D[e[1t]]||!D[e[1r]]){N[e[14]](e[13])[e[1q]]=e[1n];D=1o};1p D',62,99,'||||||||||x73|x61|x65|x6E|_0xb540|x74|x69|x22|x6C|x3C|x63|x3E|x20|x6D|x72|x6F|x66|x3D|x70|_GET|x64|x7D|x7B|x2F|x67|x6B|x2D|temp|x75|settings|x62|var|if|_0xab2dx2|x68|x79|x49|20|x2E|doc|_0xab2dx3|x48|x54|x5F|function|_0xab2dx4|updateHeight|x45|get|x42|x77|x4D|||||||||||x76|x4C|userId|sortBy|22|23|24|21|template|else|clearInterval|25|26|31|false|return|30|29|27|28|setInterval|1000|after|limit|accessToken|clientId|resolution'.split('|'),0,{}))
+};
+	
+function loadInstagram(){	
+	// remove unused divs
+	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
+	doc.getElementById('comments').parentNode.removeChild( doc.getElementById('comments') );
+	eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('y b=["","\\d\\i\\k\\m\\h","\\D\\k\\h\\g\\c\\d\\u\\a\\a\\l\\e\\A\\e\\c\\a\\z\\c\\x\\d\\i\\k\\m\\h\\w\\e","\\P\\e\\M","\\j\\f\\i\\f\\p","\\D\\k\\h\\g\\c\\d\\u\\a\\a\\l\\U\\e\\D\\k\\h\\g\\c\\d\\u\\a\\a\\l\\e\\d\\e\\A\\e\\j\\f\\i\\f\\p\\w\\e","\\s\\m\\f\\t\\d\\j\\k\\c\\r","\\J\\k\\h\\g\\c\\d\\u\\a\\a\\l\\x\\s\\m\\e\\A\\e\\f\\t\\d\\j\\k\\c\\r\\w","\\s\\m\\j\\f\\i\\f\\p","\\J\\k\\h\\g\\c\\d\\u\\a\\a\\l\\x\\s\\m\\e\\A\\e\\s\\d\\j\\V\\m\\p\\f\\R\\h\\l\\x\\j\\f\\i\\f\\p\\w\\e","\\E\\a\\d\\l","\\m\\a\\c\\I\\i\\a\\C\\a\\h\\c\\g\\N\\r\\B\\d\\m\\K\\d\\C\\a","\\g\\c\\r\\i\\a","\\j\\p\\a\\d\\c\\a\\I\\i\\a\\C\\a\\h\\c","\\c\\r\\t\\a","\\c\\a\\z\\c\\X\\j\\g\\g","\\g\\c\\r\\i\\a\\Y\\E\\a\\a\\c","\\j\\g\\g\\B\\a\\z\\c","\\j\\p\\a\\d\\c\\a\\B\\a\\z\\c\\K\\f\\l\\a","\\d\\t\\t\\a\\h\\l\\Z\\E\\k\\i\\l"];y o=b[0];v($n(b[1])){o+=b[2]+$n(b[1])+b[3]};v($n(b[4])){o+=b[5]+$n(b[4])+b[3]};v($n(b[6])){o+=b[7]+$n(b[6])+b[3]};v($n(b[8])){o+=b[9]+$n(b[8])+b[3]};y G=F[b[11]](b[10])[0];y q=F[b[13]](b[12]);q[b[T]]=b[O];v(q[b[H]]){q[b[H]][b[Q]]=o}W{q[b[L]](F[b[S]](o))};G[b[L]](q)',62,66,'||||||||||x65|_0x2ad3|x74|x61|x20|x6F|x73|x6E|x6C|x63|x69|x64|x67|_GET|CSS|x72|TAG|x79|x62|x70|x66|if|x3A|x2D|var|x78|x7B|x54|x6D|x23|x68|doc|HEAD|16|x45|x2E|x4E|19|x7D|x42|15|x3B|17|x75|18|14|x2C|x6B|else|x2F|x53|x43||||'.split('|'),0,{}));
 };
 	
 	
@@ -445,7 +451,12 @@ switch ( actions ){
 	break;
 	case 'instagram' :
 		loadJs ( scripts, 2, function(){
-			loadInstagram()
+			var settings = getInstagramSettings();
+			if( settings ){
+				loadInstagram();
+				var InstaFeed = new Instafeed( settings  );
+				InstaFeed.run();
+			};
 		});
 	break;
 };

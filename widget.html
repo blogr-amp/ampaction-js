@@ -472,7 +472,8 @@ function loadInstagram(){
 		win.onload = function(){
 			var insta_height = doc.getElementById('instafeed-wrapper').offsetHeight;
 			updateHeight( insta_height );
-		}
+		};
+		if( $_GET('posts') == 'false' && $_GET('follower') == 'false' && $_GET('following') == 'false' ) $('.instafeed-header').remove();
 	};
 	
 	if( settings ){

@@ -321,7 +321,7 @@ function loadDisqus(){
 	
 	// remove unused div and load styles...
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
-	doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
+	doc.getElementById('instafeed-wrapper').parentNode.removeChild( doc.getElementById('instafeed') );
 	loadStyles();
 	
 	// prep disqus script and load...
@@ -350,7 +350,7 @@ function loadFeed(){
 	
 	// remove unused div and load styles
 	doc.getElementById('comments').parentNode.removeChild( doc.getElementById('comments') );
-  	doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
+  	doc.getElementById('instafeed-wrapper').parentNode.removeChild( doc.getElementById('instafeed') );
 	loadStyles();
 	
 	// prep fedd urls

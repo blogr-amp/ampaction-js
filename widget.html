@@ -203,7 +203,8 @@ var doc = document;
 var win = window;
 
 win.addEventListener('message', receiveMessage, false);
-  
+win.addEventListener('message', updateHeight, false);
+	
 function receiveMessage( event ) {
 	if ( event.data ) {
 		var msg;

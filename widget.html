@@ -435,16 +435,15 @@ function loadInstagram(){
 		if( $_GET('bodybg') ){
 			CSS += '#instafeed { background-color: '+$_GET('bodybg')+'; } }';			
 		};
-		if( CSS !== '' ){
-			var TAG = doc.createElement('style');
-			TAG.type = 'text/css';
-			if ( TAG.styleSheet ){
-				TAG.styleSheet.cssText = CSS;
-			} else {
-				TAG.appendChild( doc.createTextNode( CSS ) );
-			};	
-			HEAD.appendChild( TAG );
-		};
+		var TAG = doc.createElement('style');
+		TAG.type = 'text/css';
+		if ( TAG.styleSheet ){
+			TAG.styleSheet.cssText = CSS;
+		} else {
+			TAG.appendChild( doc.createTextNode( CSS ) );
+		};	
+		HEAD.appendChild( TAG );
+		
     		var InstaFeed = new Instafeed( settings  );
     		InstaFeed.run();
   	};

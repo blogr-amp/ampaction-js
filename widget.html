@@ -175,6 +175,9 @@ img {
 	position: relative; 
 	top: 50%;
 }
+@media (max-width:428px){
+	#instafeed > a { width: 50%!important; }
+}	
 </style>    
 
 </head>
@@ -426,7 +429,19 @@ function loadInstagram(){
     		var TAG = doc.createElement('link');
 		TAG.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' 
 		TAG.rel = 'stylesheet';
-    		HEAD.appendChild( TAG );		
+    		HEAD.appendChild( TAG );
+		if( $_GET('columns') ){
+			var col = 100/parseFloat( $_GET('columns') );
+			var CSS = '#instafeed > a { width: '+$_GET('columns')+'%; }';
+			var TAG = doc.createElement('style');
+			TAG.type = 'text/css';
+			if ( TAG.styleSheet ){
+				TAG.styleSheet.cssText = CSS;
+			} else {
+				TAG.appendChild( doc.createTextNode( CSS ) );
+			};	
+			HEAD.appendChild( TAG );
+		};
     		var InstaFeed = new Instafeed( settings  );
     		InstaFeed.run();
   	};
@@ -463,6 +478,5 @@ switch ( actions ){
 	break;
 };
 </script>
-
 </body>
 </html>

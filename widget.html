@@ -367,19 +367,15 @@ function loadFeed(){
 	
 	// initialize Yql feed
 	$('#feeder').YqlRSS( FEED , settings , function () {
-		var div_height = doc.body.scrollHeight;
 		if ( $('#feeder > div, #feeder > ul').length ){
 			$('.post-body-frame a').attr( 'target' , '_blank' );
-			var divs = setInterval(function() {
-				if ( $('#feeder').height() !== div_height ){
-					updateHeight( $('#feeder').height() );
-				} else {
-					updateHeight( div_height );
-					clearInterval( divs );
-				}
-			}, 3000 );
+			win.onload = function(){
+				updateHeight( $('#feeder').height() );
+			};
 		} else {
-			updateHeight( $('#feeder').height() );
+			win.onload = function(){
+				updateHeight( $('#feeder').height() );
+			};
 		};
 	});
 };
@@ -413,7 +409,7 @@ function loadGooglePlus(){
 			updateHeight( body_height );
 			clearInterval( divs );
 		}
-	}, 100 );
+	}, 1000 );
 };
 	
 function loadInstagram(){

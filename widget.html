@@ -433,7 +433,7 @@ function loadInstagram(){
 		var colmobile = $_GET('columnsmobile') ? 100/parseFloat( $_GET('columnsmobile') ) : 2;
 		CSS += '@media (max-width:428px){ #instafeed > a { width: '+colmobile+'%; } }';			
 		if( $_GET('bodybg') ){
-			CSS += '#instafeed { background-color: #'+$_GET('bodybg')+'; } }';			
+			CSS += '#instafeed { background-color: '+$_GET('bodybg')+'; } }';			
 		};
 		if( CSS !== '' ){
 			var TAG = doc.createElement('style');

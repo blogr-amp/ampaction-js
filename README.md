@@ -130,7 +130,7 @@ Copyright (c) 2016 irsah
   expr:src='https://path-to-file.html
   ?ampactions=feed
   &amp;feedrelated=true
-  &amp;feedrelatedlabel={{A BLOG POST LABEL}}
+  &amp;feedrelatedlabel=[A BLOG POST LABEL]
   &amp;feedsummary=160
   &amp;feedlimit=100
   &amp;feedresults=5
@@ -184,14 +184,8 @@ Copyright (c) 2016 irsah
 #### amp-iframe: Instagram Feed, Posts, Followers & Following Count
 ```
 <amp-iframe 
-  frameborder='0'
-  width='600'
-  height='250'
-  layout='responsive'
-  resizable='resizable'
-  sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'
   src='https://path-to-file.html
-  ?ampactions=instagram
+?ampactions=instagram
 &amp;get=user
 &amp;userid=[user instagram id]
 &amp;clientid=[user instagram client id]
@@ -219,7 +213,13 @@ Copyright (c) 2016 irsah
 &amp;fontlineheight=1.428
 &amp;fontfamily=Arial
 &amp;fontcolor=333333
-&amp;fontlinkcolor=0066cc'>
+&amp;fontlinkcolor=0066cc'
+  frameborder='0'
+  width='600'
+  height='250'
+  layout='responsive'
+  resizable='resizable'
+  sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'>
   <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
     Load More...
   </div>

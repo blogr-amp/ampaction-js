@@ -415,7 +415,7 @@ function loadFeed(){
 		if ( $('#feeder > div, #feeder > ul').length ){
 			$('.post-body-frame a').attr( 'target' , '_blank' );
 			var divs = setInterval(function() {
-				if ( $('#feeder').height() > div_height ){
+				if ( $('#feeder').height() !== div_height ){
 					updateHeight( $('#feeder').height() );
 				} else {
 					updateHeight( div_height );

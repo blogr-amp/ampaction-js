@@ -224,7 +224,7 @@ img {
 <div id="comments"></div>
 
 <!-- for instafeed -->
-<div class="instafeed-wrapper" id="instafeed-wrapper">
+<div class="instafeed-wrapper" id="instafeed-wrapper" style="display:none;">
 	<div class="instafeed-header">
 		<ul>
 			<li class="instafeed-posts" style="display:none"></li>
@@ -468,6 +468,7 @@ function loadInstagram(){
 		LINK.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' 
 		LINK.rel = 'stylesheet';
     		HEAD.appendChild( LINK );
+		$('#insafeed-wrapper').show();
 		// init instafeed(js)
     		var ThisInstaFeed = new Instafeed( settings  );
     		ThisInstaFeed.run();

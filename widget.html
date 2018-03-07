@@ -352,35 +352,31 @@ function loadFeed(){
   	doc.getElementById('instafeed-wrapper').parentNode.removeChild( doc.getElementById('instafeed-wrapper') );
 	loadStyles();
 	
-	// prep fedd urls
+	// prep feed urls
 	var FEED = $_GET('canonicalhomepageurl') + 'feeds/posts/default?alt=rss';
 
 	// setup feed defaults
 	var settings = {
-		random : true,
-		ssl : true,
-		limit : parseFloat( $_GET('feedlimit') ),
-		results : parseFloat( $_GET('feedresults') ),		
-		image : parseFloat( $_GET('feedimage') ),
+		random : $_GET('feedrandom') === 'false' ? false : true,
+		ssl : $_GET('feedssl') === 'false' ? false : true,
+		limit : $_GET('feedlimit') ? parseFloat( $_GET('feedlimit') ) : 500,
+		results : $_GET('feedresults') ? parseFloat( $_GET('feedresults') ) : 10,		
+		image : $_GET('feedimage') ? parseFloat( $_GET('feedimage') ) : 480,
 		default_image : 'https://4.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtE/qHST4Q2YCCc/s1600/placeholder-image.jpg',
-		labels : true,
+		labels : $_GET('feedlabels') === 'false' ? false : true,
 		date : 'mmddyy',
 		datesep : [' ', ', '],
 		months : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-		summary : 160,
+		summary : $_GET('feedsummary') ? parseFloat( $_GET('feedsummary') ) : 160,
 		content_type: null,
 		content_url: null,
 		related: false,
     		related_label: null,
-    		status: false
+    		status: $_GET('feedstatus') === 'false' ? false : true;
 	};
 	
-	// check if custom settings available
-	if ( $_GET('feedrandom') !== false ) settings.random = false;
-	if ( $_GET('feedssl') !== false ) settings.ssl = false;	
-	if ( $_GET('feeddefaultimage') !== false ) settings.default_image = $_GET('feeddefaultimage');				
-	if ( $_GET('feedlabels') !== false ) settings.labels = false;	
-	if ( $_GET('feeddate') !== false ) {
+	if ( $_GET('feeddefaultimage') ) settings.default_image = $_GET('feeddefaultimage');				
+	if ( $_GET('feeddate') && $_GET('feeddate') !== 'false' ) {
 		settings.date = $_GET('feeddate');
 		// setup months
 		var date_months = $_GET('feedmonths');
@@ -392,21 +388,19 @@ function loadFeed(){
 		if( date_separator !== false && date_separator.indexOf('[]') !== -1 ){
 			settings.datesep = date_separator.split('[]');
 		};
+	} else {
+		settings.date = false;	
 	};
 	
-	if ( $_GET('feedsummary') !== false ) settings.summary = parseFloat( $_GET('feedsummary') );
-	
-	if ( $_GET('feedcontenttype') !== false ) {
+	if ( $_GET('feedcontenttype') && $_GET('feedcontenttype') !== 'false' ) {
 		settings.content_type = $_GET('feedcontenttype');
 		settings.content_url = $_GET('canonicalurl');
 	};
 	
-	if ( $_GET('feedrelated') !== false ){
+	if ( $_GET('feedrelated') && $_GET('feedrelated') !== false ){
 	  	settings.related = true;
 		settings.related_label = $_GET('feedrelatedlabel');	
 	};
-	
-	if ( $_GET('feedstatus') !== false ) settings.status = true;
 	
 	// initialize Yql feed
 	$('#feeder').YqlRSS( FEED , settings , function(){

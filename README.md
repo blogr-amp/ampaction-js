@@ -1,54 +1,49 @@
 # :zap: ampaction(js)
-All-in-one amp-iframe helper widget for Blogger themes with Accelerted Mobile Pages (AMP HTML) integrations. Displays a collection of Blogger posts chronoligically, in random, by featured label, by related label &amp; DISQUS comments for HTTP &amp; HTTPS Blogger blog or custom domain blogs.<br>
-<br>
+
+All-in-one amp-iframe helper widget for Blogger themes with Accelerted Mobile Pages (AMP HTML) integrations. Displays a collection of Blogger posts chronoligically, in random, by featured label, by related label &amp; DISQUS comments for HTTP &amp; HTTPS Blogger blog or custom domain blogs.
+
 Copyright (c) 2016 irsah 
-<br>
-<br>
-No Feed proxy required.<br>
-No data saved or passed or kept.<br>
-HTTP &amp; HTTPS Blogger blogs supported.<br>
-Custom domain/sub-domain Blogger blogs supported.<br>
-Feed data served by Yahoo! CDN **Fast, Quick &amp; Reliable**.<br>
-Customizable fonts display, layout &amp; callback options.<br>
-AMP valid, search indexed &amp; auto content re-size with **amp-iframe** fallback.<br>
-<br>
+
+* No Feed proxy required.
+* No data saved or passed or kept.
+* HTTP &amp; HTTPS Blogger blogs supported.
+* Custom domain/sub-domain Blogger blogs supported.
+* Feed data served by Yahoo! CDN **Fast, Quick &amp; Reliable**.
+* Customizable fonts display, layout &amp; callback options.
+* AMP valid, search indexed &amp; auto content re-size with **amp-iframe** fallback.
+
 ## What it does?
-<ul>
-<li>Setup &amp; display DISQUS comments on Blogger blog posts.</li>
-<li>Displays a collection of Blogger blog posts in chronological order.</li>
-<li>Displays a collection of Blogger blog posts in random order.</li>
-<li>Displays a collection of Blogger blog posts by related Label in chronological order.</li>
-<li>Displays a collection of Blogger blog posts by related Label in random order.</li>
-<li>Displays Blogger blog post contents by URL in text or text/html.</li>
-</ul>
-<br>
+
+* Setup &amp; display DISQUS comments on Blogger blog posts.
+* Displays a collection of Blogger blog posts in chronological order.
+* Displays a collection of Blogger blog posts in random order.
+* Displays a collection of Blogger blog posts by related Label in chronological order.
+* Displays a collection of Blogger blog posts by related Label in random order.
+* Displays Blogger blog post contents by URL in text or text/html.
+
 ## View in Action
-<ul>
-<li>https://blogr-amp.blogspot.com<br>
-AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No post edits required!).</li>
-<li>https://blogr-amp.github.io/</li>
-</ul>
-<br>
+
+* [Blogr-AMP Blogger Theme](https://blogr-amp.blogspot.com) - AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No post edits required!).
+* [ampaction(js) Live Preview](https://blogr-amp.github.io/)
+
 ## How to Use?
-<ol>
-<li>Blogger template AMP HTML ready with amp-iframe component js installed.</li>
-<li>Copy amp-iframe example (below) in Blogger Template HTML.</li>
-<li>Update expr:src value to RawGIT CDN URL pointing to this Repo.</li>
-<li>Setup query values.</li>
-<li>Update amp-iframe width &amp; height values.</li>
-<li>Save Template HTML &amp; Preview changes.</li>
-</ol>
-<br>
+
+* Blogger template AMP HTML ready with amp-iframe component js installed.
+* Copy amp-iframe example (below) in Blogger Template HTML.
+* Update expr:src value to RawGIT CDN URL pointing to this Repo.
+* Setup query values.
+* Update amp-iframe width &amp; height values.
+* Save Template HTML &amp; Preview changes.
+
 ## How it works?
-<ul>
-<li>amp-iframe sends data to HTTPS served Blogr-AMP's ampactions-js file.</li>
-<li>amp-iframe URL search quiries pass data to enable/setup widget settings.</li>
-<li>IF ?ampactions=disqus - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.</li>
-<li>IF ?ampactions=feed - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.</li>
-<li> IF ?ampactions=googleplus - Displays Google+ comments with unique identifier.</li>
-<li>[NEW] IF ?ampactions=instagram - Displays Instagram feed, posts, followers, following count.</li>
-</ul>
-<br>
+
+* amp-iframe sends data to HTTPS served Blogr-AMP's ampactions-js file.
+* amp-iframe URL search quiries pass data to enable/setup widget settings.
+* IF ?ampactions=disqus - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.
+* IF ?ampactions=feed - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.
+* IF ?ampactions=googleplus - Displays Google+ comments with unique identifier.
+* (NEW) IF ?ampactions=instagram - Displays Instagram feed, posts, followers, following count.
+
 ## Examples
 #### amp-iframe: Blogger Disqus Comments
 ```
@@ -76,7 +71,7 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   </div>
 </amp-iframe>
 ```
-<br>
+
 #### amp-iframe: Blogger Google+ Comments
 ```
 <amp-iframe
@@ -97,7 +92,7 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   </div>
 </amp-iframe>
 ```
-<br>
+
 #### amp-iframe: Blogger Posts Collection
 ```
 <amp-iframe
@@ -126,7 +121,7 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   </div>
 </amp-iframe>
 ```
-<br>
+
 #### amp-iframe: Blogger Related Posts Collection
 ```
 <amp-iframe
@@ -157,7 +152,7 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   </div>
 </amp-iframe>
 ```
-<br>
+
 #### amp-iframe: Blogger Display Post Contents
 ```
 <amp-iframe 
@@ -183,7 +178,7 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   </div>
 </amp-iframe>
 ```
-<br>
+
 #### amp-iframe: Instagram Feed, Posts, Followers & Following Count
 ```
 <amp-iframe 
@@ -228,9 +223,9 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   </div>
 </amp-iframe>
 ```
-<br>
+
 ### :sweat_smile: More Info?
-<ul>
-<li><a href="https://blogr-amp.blogspot.com/contact" target="_blank">Contact Us</a></li>
-<li><a href="https://blog.irsah.com" target="_blank">Our Blog!</a></li>
-</ul>
+
+* [Contact Us](https://blogr-amp.blogspot.com/contact)
+* [Our Blog!](https://blog.irsah.com)
+

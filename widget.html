@@ -414,9 +414,7 @@ function loadFeed(){
 		win.onload = function(){
 			if ( $('#feeder > div, #feeder > ul').length ){
 				$('.post-body-frame a').attr( 'target' , '_blank' );
-				updateHeight( doc.getElementById("feeder").scrollHeight );
-			} else {
-				updateHeight( doc.getElementById("feeder").scrollHeight );
+				updateHeight( $('#feeder').outerHeight() );
 			};
 		};
 	});

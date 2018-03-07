@@ -415,6 +415,8 @@ function loadFeed(){
 			if ( $('#feeder > div, #feeder > ul').length ){
 				$('.post-body-frame a').attr( 'target' , '_blank' );
 				updateHeight( $('#feeder').outerHeight() );
+			} else {
+				updateHeight( div_height );			
 			};
 		};
 	});

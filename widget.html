@@ -295,7 +295,6 @@ function loadJs( scripts, index, loaded ) {
 
 // styles helper
 function loadStyles(){
-	if( $_GET('canonicalhomepageurl') === false ) return (false);
 	var CSS = '';
 	if( $_GET('fontstyle') && $_GET('fontweight') && $_GET('fontsize') && $_GET('fontlineheight') && $_GET('fontfamily') )
 	   	CSS += 'body, #disqus_thread { font: '+$_GET('fontstyle')+' '+$_GET('fontweight')+' '+$_GET('fontsize')+'px/'+$_GET('fontlineheight')+' '+$_GET('fontfamily')+'; }\n';
@@ -490,7 +489,6 @@ function loadInstagram(){
 var scripts = [];
 scripts.push('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 scripts.push('https://apis.google.com/js/plusone.js');
-scripts.push('https://cdn.rawgit.com/stevenschobert/instafeed.js/e8c3a766/instafeed.min.js')
 	
 // grab ampactions
 switch ( $_GET('ampactions') ){
@@ -510,7 +508,9 @@ switch ( $_GET('ampactions') ){
 	break;
 	case 'instagram' :
 		loadJs( scripts, 0, function(){
-			loadJs( scripts, 2, function(){ loadInstagram() });
+			scripts = [];
+			scripts.push('https://cdn.rawgit.com/stevenschobert/instafeed.js/e8c3a766/instafeed.min.js');
+			loadJs( scripts, 0, function(){ loadInstagram() });
 		});
 	break;
 };

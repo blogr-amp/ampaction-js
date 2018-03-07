@@ -411,10 +411,12 @@ function loadFeed(){
 	// initialize Yql feed
 	$('#feeder').YqlRSS( FEED , settings , function(){
 		var div_height = doc.body.scrollHeight;
-		if ( $('#feeder > div, #feeder > ul').length ){
-			$('.post-body-frame a').attr( 'target' , '_blank' );
-			win.onload = function(){
-				updateHeight( doc.getElementById("feeder").scrollHeight )
+		win.onload = function(){
+			if ( $('#feeder > div, #feeder > ul').length ){
+				$('.post-body-frame a').attr( 'target' , '_blank' );
+				updateHeight( doc.getElementById("feeder").scrollHeight );
+			} else {
+				updateHeight( doc.getElementById("feeder").scrollHeight );
 			};
 		};
 	});

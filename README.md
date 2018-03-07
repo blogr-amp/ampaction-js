@@ -1,16 +1,20 @@
 # :zap: ampaction(js)
 
-All-in-one amp-iframe helper widget for Blogger themes with Accelerted Mobile Pages (AMP HTML) integrations. Displays a collection of Blogger posts chronoligically, in random, by featured label, by related label &amp; DISQUS comments for HTTP &amp; HTTPS Blogger blog or custom domain blogs.
+All-in-one `amp-iframe` helper widget for Blogger themes with Accelerted Mobile Pages (AMP HTML) integrations. 
+Displays a collection of Blogger posts chronoligically, in random, by featured label, by related label.
+Retrieve Disqus & Google+ comments assigned with Blogger post.
+Retrieves & displays Instagram feed posts, followers & following count.
+For HTTP & HTTPS Blogger blog or custom domain blogs.
 
 Copyright (c) 2016 irsah 
 
 * No Feed proxy required.
-* No data saved or passed or kept.
-* HTTP &amp; HTTPS Blogger blogs supported.
+* No data saved, passed or kept.
+* HTTP & HTTPS Blogger blogs supported.
 * Custom domain/sub-domain Blogger blogs supported.
 * Feed data served by Yahoo! CDN `Fast, Quick & Reliable`.
 * Customizable fonts display, layout & callback options.
-* AMP valid, search indexed &amp; auto content re-size with `amp-iframe` fallback.
+* AMP valid, search indexed & auto content re-size with `amp-iframe` fallback.
 
 ## What it does?
 
@@ -21,7 +25,7 @@ Copyright (c) 2016 irsah
 * Displays a collection of Blogger blog posts by related Label in chronological order.
 * Displays a collection of Blogger blog posts by related Label in random order.
 * Displays Blogger blog post contents by URL in text or text/html.
-* Retrieve & display Instagram feed, posts, followers, following count.
+* Retrieve & display Instagram feed posts, followers, following count.
 
 ## View in Action
 
@@ -30,21 +34,21 @@ Copyright (c) 2016 irsah
 
 ## How to Use?
 
-* Blogger template AMP HTML ready with amp-iframe component js installed.
-* Copy amp-iframe example (below) in Blogger Template HTML.
-* Update expr:src value to RawGIT CDN URL pointing to this Repo.
+* `Required` Blogger template/theme AMP HTML ready with amp-iframe component js installed.
+* Copy `amp-iframe` example (below) in Blogger Template HTML.
+* Update `expr:src` value to RawGIT CDN URL pointing to this Repo.
 * Setup query values.
-* Update amp-iframe width & height values.
+* Update `amp-iframe` width & height values.
 * Save Template HTML & Preview changes.
 
 ## How it works?
 
 * `amp-iframe` sends data to HTTPS served Blogr-AMP's ampactions-js file.
 * `amp-iframe` URL search quiries pass data to enable/setup widget settings.
-* IF `?ampactions=disqus` - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.
 * IF `?ampactions=feed` - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.
+* IF `?ampactions=disqus` - Disqus comments embed js initiates with `disqus_shortname` values assigned to render comment form & comment forum thread.
 * IF `?ampactions=googleplus` - Displays Google+ comments with unique identifier.
-* (NEW) IF `?ampactions=instagram` - Displays Instagram feed, posts, followers, following count.
+* (NEW) IF `?ampactions=instagram` - Displays Instagram feed - posts, followers, following count.
 
 ## Examples
 #### amp-iframe: Blogger Disqus Comments

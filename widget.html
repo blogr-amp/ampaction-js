@@ -410,14 +410,8 @@ function loadFeed(){
 	
 	// initialize Yql feed
 	$('#feeder').YqlRSS( FEED , settings , function(){
-		var div_height = doc.body.scrollHeight;
-		win.onload = function(){
-			if ( $('#feeder > div, #feeder > ul').length ){
-				$('.post-body-frame a').attr( 'target' , '_blank' );
-				updateHeight( $('#feeder').outerHeight() );
-			} else {
-				updateHeight( div_height );			
-			};
+		$('#feeder > div, #feeder > ul, #feeder img').on('load', function(){
+			updateHeight( doc.body.scrollHeight );
 		};
 	});
 };
@@ -445,8 +439,7 @@ function loadGooglePlus(){
 	var gPlus_height = gPlus.offsetHeight;
 	var divs = setInterval(function() {
 		if ( gPlus_height > body_height ){			
-			body_height = gPlus_height;
-			updateHeight( body_height );
+			updateHeight( gPlus_height );
 		} else {
 			updateHeight( body_height );
 			clearInterval( divs );

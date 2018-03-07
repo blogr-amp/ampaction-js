@@ -482,11 +482,9 @@ function loadInstagram(){
   	};
 };
 	
-	
 // external libraries
 var scripts = [];
 scripts.push('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
-scripts.push('https://apis.google.com/js/plusone.js');
 	
 // grab ampactions
 switch ( $_GET('ampactions') ){
@@ -494,7 +492,9 @@ switch ( $_GET('ampactions') ){
 		loadDisqus(); 
 	break;
 	case 'googleplus' : 
-		loadJs( scripts , 1 , function(){ 
+		scripts = [];
+		scripts.push('https://apis.google.com/js/plusone.js');
+		loadJs( scripts , 0 , function(){ 
 			loadGooglePlus();
 		});
 	break;			

@@ -198,7 +198,7 @@ img {
 	text-align: center;
 }
 .instafeed-header li span { 
-	font-size: 1.25em;
+	font-size: 1.15em;
 	display: block;
 }
 .instafeed-header li span + span { 
@@ -296,7 +296,17 @@ function loadJs( scripts, index, loaded ) {
 // styles helper
 function loadStyles(){
 	if( $_GET('canonicalhomepageurl') === false ) return (false);
-	var CSS = 'body, #disqus_thread { font: '+$_GET('fontstyle')+' '+$_GET('fontweight')+' '+$_GET('fontsize')+'px/'+$_GET('fontlineheight')+' '+$_GET('fontfamily')+'; color: #'+$_GET('fontcolor')+'; } a, #disqus_thread a { color: #'+$_GET('fontlinkcolor')+'; }';
+	var CSS = '';
+	if( $_GET('fontstyle') && $_GET('fontweight') && $_GET('fontsize') && $_GET('fontlineheight') && $_GET('fontfamily') )
+	   	CSS += 'body, #disqus_thread { font: '+$_GET('fontstyle')+' '+$_GET('fontweight')+' '+$_GET('fontsize')+'px/'+$_GET('fontlineheight')+' '+$_GET('fontfamily')+'; }\n';
+	if( $_GET('fontcolor') )
+		var color = $_GET('fontcolor');
+		if( color.indexOf('#') == -1 ) color = '#'+color;
+		CSS += 'body, #disqus_thread { color: '+ color +'; }\n';
+	if( $_GET('fontlinkcolor') )
+		var link = $_GET('fontlinkcolor');
+		if( link.indexOf('#') == -1 ) link = '#'+link;
+		CSS += 'a, #disqus_thread a { color: '+ link +'; }';
 	var HEAD = doc.getElementsByTagName('head')[0];
 	var TAG = doc.createElement('style');
 	TAG.type = 'text/css';
@@ -462,6 +472,7 @@ function loadInstagram(){
 	
 	if( settings ){
 		// add font awesome
+		loadStyles();
 		var HEAD = doc.getElementsByTagName('head')[0];
     		var LINK = doc.createElement('link');
 		LINK.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' 

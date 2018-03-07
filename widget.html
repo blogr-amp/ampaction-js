@@ -411,15 +411,19 @@ function loadFeed(){
 	
 	// initialize Yql feed
 	$('#feeder').YqlRSS( FEED , settings , function () {
+		var div_height = doc.body.scrollHeight;
 		if ( $('#feeder > div, #feeder > ul').length ){
 			$('.post-body-frame a').attr( 'target' , '_blank' );
-			win.onload = function(){
-				updateHeight( $('#feeder').height() );
-			};
+			var divs = setInterval(function() {
+				if ( $('#feeder').height() > div_height ){
+					updateHeight( $('#feeder').height() );
+				} else {
+					updateHeight( div_height );
+					clearInterval( divs );
+				}
+			}, 3000 );
 		} else {
-			win.onload = function(){
-				updateHeight( $('#feeder').height() );
-			};
+			updateHeight( $('#feeder').height() );
 		};
 	});
 };
@@ -432,7 +436,7 @@ function loadGooglePlus(){
 	
 	// remove unused divs
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
-  	doc.getElementById('instafeed').parentNode.removeChild( doc.getElementById('instafeed') );
+  	doc.getElementById('instafeed-wrapper').parentNode.removeChild( doc.getElementById('instafeed-wrapper') );
 	
 	// create googleplus div
 	var gPlus = doc.getElementById('comments');

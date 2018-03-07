@@ -298,14 +298,12 @@ function loadStyles(){
 	var CSS = '';
 	if( $_GET('fontstyle') && $_GET('fontweight') && $_GET('fontsize') && $_GET('fontlineheight') && $_GET('fontfamily') )
 	   	CSS += 'body, #disqus_thread { font: '+$_GET('fontstyle')+' '+$_GET('fontweight')+' '+$_GET('fontsize')+'px/'+$_GET('fontlineheight')+' '+$_GET('fontfamily')+'; }\n';
-	if( $_GET('fontcolor') )
-		var color = $_GET('fontcolor');
-		if( color.indexOf('#') == -1 ) color = '#'+color;
-		CSS += 'body, #disqus_thread { color: '+ color +'; }\n';
-	if( $_GET('fontlinkcolor') )
-		var link = $_GET('fontlinkcolor');
-		if( link.indexOf('#') == -1 ) link = '#'+link;
-		CSS += 'a, #disqus_thread a { color: '+ link +'; }';
+	var color = $_GET('fontcolor') ? $_GET('fontcolor') : '333333';
+	if( color.indexOf('#') == -1 ) color = '#'+color;
+	CSS += 'body, #disqus_thread { color: '+ color +'; }\n';
+	var link = $_GET('fontlinkcolor') ? $_GET('fontlinkcolor') : '0066cc';
+	if( link.indexOf('#') == -1 ) link = '#'+link;
+	CSS += 'a, #disqus_thread a { color: '+ link +'; }';
 	var HEAD = doc.getElementsByTagName('head')[0];
 	var TAG = doc.createElement('style');
 	TAG.type = 'text/css';

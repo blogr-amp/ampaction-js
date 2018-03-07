@@ -43,23 +43,24 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
 <ul>
 <li>amp-iframe sends data to HTTPS served Blogr-AMP's ampactions-js file.</li>
 <li>amp-iframe URL search quiries pass data to enable/setup widget settings.</li>
-<li>IF ?ampaction=disqus - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.</li>
-<li>IF ?ampaction=feed - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.</li>
-<li>[NEW] IF ?ampaction=googleplus - Displays Google+ comments with unique identifier.</li>
+<li>IF ?ampactions=disqus - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.</li>
+<li>IF ?ampactions=feed - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.</li>
+<li> IF ?ampactions=googleplus - Displays Google+ comments with unique identifier.</li>
+<li>[NEW] IF ?ampactions=instagram - Displays Instagram feed, posts, followers, following count.</li>
 </ul>
 <br>
 ## Examples
-#### amp-iframe: Blogger DISQUS Comments
+#### amp-iframe: Blogger Disqus Comments
 ```
 <amp-iframe
   expr:src='https://path-to-file.html
   ?ampactions=disqus
-  &amp;shortname={{DISQUS_SHORTNAME}}
+  &amp;shortname=[disqus_shortname]
   &amp;fontstyle=normal
   &amp;fontweight=normal
   &amp;fontsize=16
   &amp;fontlineheight=1.428
-  &amp;fontfamily=Helvetica,Arial,sans-serif
+  &amp;fontfamily=Arial
   &amp;canonicalurl=" + data:blog.canonicalUrl + "
   &amp;url=" + data:blog.url + "
   &amp;homepageurl=" + data:blog.homepageUrl + "
@@ -70,11 +71,13 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   resizable='resizable'
   sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'
   width='600'>
-<div aria-label='Disqus' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'/>
+  <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
+    Load More...
+  </div>
 </amp-iframe>
 ```
 <br>
-#### [NEW] amp-iframe: Blogger Google+ Comments
+#### amp-iframe: Blogger Google+ Comments
 ```
 <amp-iframe
   expr:src='https://path-to-file.html
@@ -89,10 +92,12 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   resizable='resizable'
   sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'
   width='600'>
-<div aria-label='Goole+' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'/>
+  <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
+    Load More...
+  </div>
 </amp-iframe>
 ```
-<br/>
+<br>
 #### amp-iframe: Blogger Posts Collection
 ```
 <amp-iframe
@@ -116,10 +121,12 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   resizable='resizable'
   sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'
   width='600'>
-  <div aria-label='Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'/>
+  <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
+    Load More...
+  </div>
 </amp-iframe>
 ```
-<br/>
+<br>
 #### amp-iframe: Blogger Related Posts Collection
 ```
 <amp-iframe
@@ -145,10 +152,12 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   resizable='resizable' 
   sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups' 
   width='600'>
-  <div aria-label='Related' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'/>
+  <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
+    Load More...
+  </div>
 </amp-iframe>
 ```
-<br/>
+<br>
 #### amp-iframe: Blogger Display Post Contents
 ```
 <amp-iframe 
@@ -169,12 +178,59 @@ AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No 
   resizable='resizable'
   sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups' 
   width='600'>
-<div aria-label='Related' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'/>
+  <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
+    Load More...
+  </div>
 </amp-iframe>
 ```
-<br/>
+<br>
+#### amp-iframe: Instagram Feed, Posts, Followers & Following Count
+```
+<amp-iframe 
+  frameborder='0'
+  width='600'
+  height='250'
+  layout='responsive'
+  resizable='resizable'
+  sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'
+  src='https://path-to-file.html
+  ?ampactions=instagram
+&amp;get=user
+&amp;userid=[user instagram id]
+&amp;clientid=[user instagram client id]
+&amp;accesstoken=[user instagram access token]
+&amp;sortby=random
+&amp;limit=6
+&amp;resolution=thumbnail
+&amp;comments=true
+&amp;likes=true
+&amp;headercolor=%23333333
+&amp;headerbg=%23ffffff
+&amp;feedbg=%23000000
+&amp;feedbgopacity=.45
+&amp;feedbgcolor=%23000000
+&amp;feedcolor=%23ffffff
+&amp;posts=Posts
+&amp;follower=Followers
+&amp;following=Following
+&amp;breakpoint=428
+&amp;columns=3
+&amp;columnsmobile=2
+&amp;fontstyle=normal
+&amp;fontweight=bold
+&amp;fontsize=15
+&amp;fontlineheight=1.428
+&amp;fontfamily=Georgia
+&amp;fontcolor=333333
+&amp;fontlinkcolor=0066cc'>
+  <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
+    Load More...
+  </div>
+</amp-iframe>
+```
+<br>
 ### :sweat_smile: More Info?
 <ul>
 <li><a href="https://blogr-amp.blogspot.com/contact" target="_blank">Contact Us</a></li>
-<li><a href="//blog.irsah.com" target="_blank">Our Blog!</a></li>
+<li><a href="https://blog.irsah.com" target="_blank">Our Blog!</a></li>
 </ul>

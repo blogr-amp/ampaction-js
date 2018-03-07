@@ -409,20 +409,13 @@ function loadFeed(){
 	if ( $_GET('feedstatus') !== false ) settings.status = true;
 	
 	// initialize Yql feed
-	$('#feeder').YqlRSS( FEED , settings , function () {
+	$('#feeder').YqlRSS( FEED , settings , function(){
 		var div_height = doc.body.scrollHeight;
 		if ( $('#feeder > div, #feeder > ul').length ){
 			$('.post-body-frame a').attr( 'target' , '_blank' );
-			var divs = setInterval(function() {
-				if ( $('#feeder').height() !== div_height ){
-					updateHeight( $('#feeder').height() );
-				} else {
-					updateHeight( div_height );
-					clearInterval( divs );
-				}
-			}, 3000 );
-		} else {
-			updateHeight( $('#feeder').height() );
+			win.onload = function(){
+				updateHeight( doc.getElementById("feeder").scrollHeight )
+			};
 		};
 	});
 };

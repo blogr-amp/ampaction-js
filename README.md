@@ -51,6 +51,7 @@ Copyright (c) 2016 irsah
 * (NEW) IF `?ampactions=instagram` - Displays Instagram feed - posts, followers, following count.
 
 ## Examples
+
 #### amp-iframe: Blogger Disqus Comments
 ```
 <amp-iframe
@@ -229,6 +230,12 @@ Copyright (c) 2016 irsah
   </div>
 </amp-iframe>
 ```
+
+## Useful References
+
+* [AMP Project Documentation](https://www.ampproject.org/docs/)
+* [amp-iframe Documentation](https://www.ampproject.org/docs/reference/components/amp-iframe)
+* [ampaction(js) Live Preview](https://blogr-amp.github.io/)
 
 ### :sweat_smile: More Info?
 

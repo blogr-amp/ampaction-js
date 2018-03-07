@@ -412,7 +412,7 @@ function loadFeed(){
 	$('#feeder').YqlRSS( FEED , settings , function(){
 		$('#feeder > div, #feeder > ul, #feeder img').on('load', function(){
 			updateHeight( doc.body.scrollHeight );
-		};
+		});
 	});
 };
 

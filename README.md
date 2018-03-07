@@ -8,23 +8,25 @@ Copyright (c) 2016 irsah
 * No data saved or passed or kept.
 * HTTP &amp; HTTPS Blogger blogs supported.
 * Custom domain/sub-domain Blogger blogs supported.
-* Feed data served by Yahoo! CDN **Fast, Quick &amp; Reliable**.
-* Customizable fonts display, layout &amp; callback options.
-* AMP valid, search indexed &amp; auto content re-size with **amp-iframe** fallback.
+* Feed data served by Yahoo! CDN `Fast, Quick & Reliable`.
+* Customizable fonts display, layout & callback options.
+* AMP valid, search indexed &amp; auto content re-size with `amp-iframe` fallback.
 
 ## What it does?
 
-* Setup &amp; display DISQUS comments on Blogger blog posts.
+* Setup & display Disqus comments on Blogger blog posts.
+* Setup & display Google+ comments on Blogger blog posts.
 * Displays a collection of Blogger blog posts in chronological order.
 * Displays a collection of Blogger blog posts in random order.
 * Displays a collection of Blogger blog posts by related Label in chronological order.
 * Displays a collection of Blogger blog posts by related Label in random order.
 * Displays Blogger blog post contents by URL in text or text/html.
+* Retrieve & display Instagram feed, posts, followers, following count.
 
 ## View in Action
 
 * [Blogr-AMP Blogger Theme](https://blogr-amp.blogspot.com) - AMP HTML enabled &amp; valid Blogger blog with Blogr-AMP template framework (No post edits required!).
-* [ampaction(js) Live Preview](https://blogr-amp.github.io/)
+* [ampaction(js) Live Preview](https://blogr-amp.github.io/) - Widget working & live preview.
 
 ## How to Use?
 
@@ -32,17 +34,17 @@ Copyright (c) 2016 irsah
 * Copy amp-iframe example (below) in Blogger Template HTML.
 * Update expr:src value to RawGIT CDN URL pointing to this Repo.
 * Setup query values.
-* Update amp-iframe width &amp; height values.
-* Save Template HTML &amp; Preview changes.
+* Update amp-iframe width & height values.
+* Save Template HTML & Preview changes.
 
 ## How it works?
 
-* amp-iframe sends data to HTTPS served Blogr-AMP's ampactions-js file.
-* amp-iframe URL search quiries pass data to enable/setup widget settings.
-* IF ?ampactions=disqus - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.
-* IF ?ampactions=feed - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.
-* IF ?ampactions=googleplus - Displays Google+ comments with unique identifier.
-* (NEW) IF ?ampactions=instagram - Displays Instagram feed, posts, followers, following count.
+* `amp-iframe` sends data to HTTPS served Blogr-AMP's ampactions-js file.
+* `amp-iframe` URL search quiries pass data to enable/setup widget settings.
+* IF `?ampactions=disqus` - DISQUS comments embed js initiates with disqus_shortname values assigned to render DISQUS comment form &amp; comment forum thread.
+* IF `?ampactions=feed` - Widget requests Blogger blog feed data from Yahoo! (via YQL), process jSON feed data received &amp; display in text or HTML.
+* IF `?ampactions=googleplus` - Displays Google+ comments with unique identifier.
+* (NEW) IF `?ampactions=instagram` - Displays Instagram feed, posts, followers, following count.
 
 ## Examples
 #### amp-iframe: Blogger Disqus Comments
@@ -107,7 +109,7 @@ Copyright (c) 2016 irsah
   &amp;fontweight=normal
   &amp;fontsize=16
   &amp;fontlineheight=1.428
-  &amp;fontfamily=Helvetica,Arial,sans-serif
+  &amp;fontfamily=Arial
   &amp;canonicalurl=" + data:blog.canonicalUrl +" 
   &amp;canonicalhomepageurl=" + data:blog.canonicalhomepageUrl + " 
   frameborder='0'
@@ -138,7 +140,7 @@ Copyright (c) 2016 irsah
   &amp;fontweight=normal
   &amp;fontsize=16
   &amp;fontlineheight=1.428
-  &amp;fontfamily=Helvetica,Arial,sans-serif
+  &amp;fontfamily=Arial
   &amp;canonicalurl=" + data:blog.canonicalUrl + " 
   &amp;canonicalhomepageurl=" + data:blog.canonicalhomepageUrl + " 
   frameborder='0' 
@@ -164,7 +166,7 @@ Copyright (c) 2016 irsah
   &amp;fontweight=normal
   &amp;fontsize=16
   &amp;fontlineheight=1.428
-  &amp;fontfamily=Helvetica,Arial,sans-serif
+  &amp;fontfamily=Arial
   &amp;canonicalurl=" + data:blog.canonicalUrl + " 
   &amp;canonicalhomepageurl=" + data:blog.canonicalhomepageUrl + " 
   frameborder='0'
@@ -215,7 +217,7 @@ Copyright (c) 2016 irsah
 &amp;fontweight=bold
 &amp;fontsize=15
 &amp;fontlineheight=1.428
-&amp;fontfamily=Georgia
+&amp;fontfamily=Arial
 &amp;fontcolor=333333
 &amp;fontlinkcolor=0066cc'>
   <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>

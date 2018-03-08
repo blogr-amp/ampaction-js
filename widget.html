@@ -301,10 +301,7 @@ function loadStyles(){
 	if( $_GET('fontstyle') && $_GET('fontweight') && $_GET('fontsize') && $_GET('fontlineheight') && $_GET('fontfamily') )
 	   	CSS += 'body, #disqus_thread { font: '+$_GET('fontstyle')+' '+$_GET('fontweight')+' '+$_GET('fontsize')+'px/'+$_GET('fontlineheight')+' '+$_GET('fontfamily')+'; }\n';
 	var color = $_GET('fontcolor') ? $_GET('fontcolor') : '333333';
-	if( color.indexOf('#') == -1 ) color = '#'+color;
 	CSS += 'body, #disqus_thread { color: '+ color +'; }\n';
-	var link = $_GET('fontlinkcolor') ? $_GET('fontlinkcolor') : '0066cc';
-	if( link.indexOf('#') == -1 ) link = '#'+link;
 	CSS += 'a, #disqus_thread a { color: '+ link +'; }';
 	var HEAD = doc.getElementsByTagName('head')[0];
 	var TAG = doc.createElement('style');
@@ -417,12 +414,16 @@ function loadFeed(){
 		});
 	});
 };
-
+	
 function loadGooglePlus(){
 	
 	// check url
 	// required for G+ comments unique identifier
 	if( !$_GET('url') ) return (false);
+	
+	win.addEventListener( "resize" , function(){
+		updateHeight( doc.body.scrollHeight )
+	}, false );
 	
 	// remove unused divs
 	doc.getElementById('feeder').parentNode.removeChild( doc.getElementById('feeder') );
@@ -436,17 +437,6 @@ function loadGooglePlus(){
 		'view_type' : 'FILTERED_POSTMOD',
 		'width': gPlus.offsetWidth
 	});
-		
-	var body_height = doc.body.scrollHeight;
-	var gPlus_height = gPlus.offsetHeight;
-	var divs = setInterval(function() {
-		if ( gPlus_height > body_height ){			
-			updateHeight( gPlus_height );
-		} else {
-			updateHeight( body_height );
-			clearInterval( divs );
-		}
-	}, 1000 );
 };
 	
 function loadInstagram(){

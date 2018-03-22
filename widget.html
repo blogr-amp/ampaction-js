@@ -419,7 +419,6 @@ function loadFeed(){
 function loadGooglePlus(){
 	
 	// check url
-	// required for G+ comments unique identifier
 	if( !$_GET('url') ) return (false);
 	
 	doc.body.addEventListener( "resize" , function(){
@@ -438,7 +437,6 @@ function loadGooglePlus(){
 		'view_type' : 'FILTERED_POSTMOD',
 		'width': gPlus.offsetWidth
 	});
-	console.log( win.location );
 };
 	
 function loadInstagram(){

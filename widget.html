@@ -422,7 +422,7 @@ function loadGooglePlus(){
 	// required for G+ comments unique identifier
 	if( !$_GET('url') ) return (false);
 	
-	win.addEventListener( "resize" , function(){
+	doc.body.addEventListener( "resize" , function(){
 		updateHeight( doc.body.scrollHeight )
 	}, false );
 	
@@ -433,19 +433,12 @@ function loadGooglePlus(){
 	// create googleplus div
 	var gPlus = doc.getElementById('comments');
 	gapi.comments.render( 'comments', {
-		'href': $_GET('url'),
+		'href': win.location,
 		'first_party_property' : 'BLOGGER',
 		'view_type' : 'FILTERED_POSTMOD',
 		'width': gPlus.offsetWidth
 	});
-	console.log( $_GET('url') );
-	gPlus.addEventListener( "click" , function(e) {
-		console.log( doc.body.scrollHeight );
-		if ( e.target && e.target.nodeName == "IFRAME" ) {
-    			console.log( gPlus.getElementsByTagName("iframe")[0].scrollHeight );
-			updateHeight( doc.body.scrollHeight );
-		};
-	});
+	console.log( win.location );
 };
 	
 function loadInstagram(){

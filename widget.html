@@ -420,7 +420,7 @@ function loadGooglePlus(){
 	
 	// check url
 	// required for G+ comments unique identifier
-	if( !$_GET('url') ) return (false);
+	if( !$_GET('canonicalurl') ) return (false);
 	
 	win.addEventListener( "resize" , function(){
 		updateHeight( doc.body.scrollHeight )
@@ -433,12 +433,12 @@ function loadGooglePlus(){
 	// create googleplus div
 	var gPlus = doc.getElementById('comments');
 	gapi.comments.render( 'comments', {
-		'href': win.location,
+		'href': $_GET('canonicalurl'),
 		'first_party_property' : 'BLOGGER',
 		'view_type' : 'FILTERED_POSTMOD',
 		'width': gPlus.offsetWidth
 	});
-	console.log( win.location );
+	console.log( $_GET('canonicalurl') );
 	gPlus.addEventListener("click",function(e) {
 		if ( e.target && e.target.nodeName == "IFRAME" ) {
     			console.log( gPlus.getElementsByTagName("iframe")[0].scrollHeight );

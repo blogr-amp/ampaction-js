@@ -81,23 +81,7 @@ Copyright (c) 2016 irsah
 
 #### amp-iframe: Blogger Google+ Comments
 ```
-<amp-iframe
-  expr:src='https://path-to-file.html
-  ?ampactions=googleplus
-  &amp;canonicalurl=" + data:blog.canonicalUrl + "
-  &amp;url=" + data:blog.url + "
-  &amp;homepageurl=" + data:blog.homepageUrl + "
-  &amp;canonicalhomepageurl=" + data:blog.canonicalHomepageUrl'
-  frameborder='0'
-  height='450'
-  layout='responsive'
-  resizable='resizable'
-  sandbox='allow-forms allow-scripts allow-same-origin allow-modals allow-popups'
-  width='600'>
-  <div aria-label='ampaction(js) Feed' overflow='overflow' placeholder='placeholder' role='button' tabindex='0'>
-    Load More...
-  </div>
-</amp-iframe>
+Not available...
 ```
 
 #### amp-iframe: Blogger Posts Collection
